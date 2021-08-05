@@ -7,11 +7,13 @@ public class Solution {
     Scanner scanner = new Scanner(System.in);
     Solution solution = new Solution();
 
-    solution.getFactorial(scanner);
-    solution.getSquares(scanner);
+//    solution.getFactorial(scanner);
+//    solution.getSquares(scanner);
+    solution.checkPalindrome(scanner);
   }
 
   // Factorial
+
   void getFactorial(Scanner scanner) {
     System.out.println("Please input a positive number:");
 
@@ -25,7 +27,6 @@ public class Solution {
 
     System.out.println(stringBuilder.toString());
   }
-
   int calcFactorial(int number) {
     if (number == 1) {
       return 1;
@@ -44,6 +45,7 @@ public class Solution {
   }
 
   // Triangle
+
   void getSquares(Scanner scanner) {
     System.out.println("\nPlease input the number of rows in our triangle:");
     int numberOfRows = scanner.nextInt();
@@ -55,7 +57,6 @@ public class Solution {
     numberOfSquares = triangleTailRecursive(numberOfRows, 0);
     System.out.println("A triangle of " + numberOfRows + " rows has " + numberOfSquares + " squares.");
   }
-
   int triangle(int numberOfRows) {
     if (numberOfRows == 1) {
       return 1;
@@ -71,4 +72,26 @@ public class Solution {
     }
   }
 
+
+  // palindrome
+  private void checkPalindrome(Scanner scanner) {
+    System.out.println("\nPlease input a word:");
+    String input = scanner.nextLine();
+
+    if (isPalindrome(input)) {
+      System.out.println("The input is a palindrome.");
+    } else {
+      System.out.println("The input is no paliondrome.");
+    }
+  }
+
+  private boolean isPalindrome(String input) {
+    if (input.length() > 1) {
+      boolean isPalindrome = isPalindrome(input.substring(1, input.length() - 1 ))
+          && (input.charAt(0) == input.charAt(input.length() -1));
+      return isPalindrome;
+    } else {
+      return true;
+    }
+  }
 }

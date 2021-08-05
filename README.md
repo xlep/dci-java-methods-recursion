@@ -11,3 +11,8 @@ Imaging a triangle made of squares. The top row has one square, the next row has
 e.g. triangle(2) would have 3 squares, while triangle(3) would have 6 squares
 * Optional: build the same function in a tail-recursive manner
 
+## Palindrome
+Use a recursive function to check if a given input is a palindrome. Palindromes are words that read the same backward or forward. e.g. mom or radar
+
+
+
